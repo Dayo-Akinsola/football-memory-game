@@ -1,3 +1,13 @@
+# Premier League Memory Game
+
+[Live Site]()
+
+Based on 'The Odin Project' curriculum.
+
+The app is a memory game based on premier league teams where the goal is to click all the cards on the screen without clicking any one twice.
+Depending on the difficulty chosen a certain amount of cards will be randomly chosen and shuffled to then be displayed to the user. After a player chooses
+a card the group of cards will be randomly shuffled again, or the game over screen will be shown.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
