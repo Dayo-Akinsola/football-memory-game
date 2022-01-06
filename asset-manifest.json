@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/football-memory-game/static/css/main.a3abc3e5.css",
+    "main.js": "/football-memory-game/static/js/main.034a34c1.js",
+    "static/media/Newcastle_United.png": "/football-memory-game/static/media/Newcastle_United.72035a9bd9f601c2dd53.png",
+    "static/media/Manchester_City.png": "/football-memory-game/static/media/Manchester_City.f7979dc28ca201ad219a.png",
+    "static/media/Everton.png": "/football-memory-game/static/media/Everton.67c38842dc4724f16053.png",
+    "static/media/Leicester_City.png": "/football-memory-game/static/media/Leicester_City.f0741990df915306f062.png",
+    "static/media/Manchester_United.png": "/football-memory-game/static/media/Manchester_United.c4edde9263e6afe0fa94.png",
+    "static/media/Liverpool.png": "/football-memory-game/static/media/Liverpool.480327ee3fb03aa7ecd1.png",
+    "static/media/Brentford.png": "/football-memory-game/static/media/Brentford.b061212f36a2eb612cf7.png",
+    "static/media/Norwich_City.png": "/football-memory-game/static/media/Norwich_City.d3c00f44256f52fa8ebc.png",
+    "static/media/Crystal_Palace.png": "/football-memory-game/static/media/Crystal_Palace.defc7903d2db355b0bfd.png",
+    "static/media/Burnley.png": "/football-memory-game/static/media/Burnley.eec22891919ebe9c86bd.png",
+    "static/media/Southampton.png": "/football-memory-game/static/media/Southampton.b967971a448144d7eca7.png",
+    "static/media/Chelsea.png": "/football-memory-game/static/media/Chelsea.4e413fc81307d9943a94.png",
+    "static/media/West_Ham_United.png": "/football-memory-game/static/media/West_Ham_United.c1ae140f881181098c9b.png",
+    "static/media/Arsenal.png": "/football-memory-game/static/media/Arsenal.b5b8570670bf07b286a9.png",
+    "index.html": "/football-memory-game/index.html",
+    "main.a3abc3e5.css.map": "/football-memory-game/static/css/main.a3abc3e5.css.map",
+    "main.034a34c1.js.map": "/football-memory-game/static/js/main.034a34c1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a3abc3e5.css",
+    "static/js/main.034a34c1.js"
+  ]
+}
