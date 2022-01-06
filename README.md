@@ -1,6 +1,6 @@
 # Premier League Memory Game
 
-[Live Site]()
+[Live Site](https://dayo-akinsola.github.io/football-memory-game/)
 
 Based on 'The Odin Project' curriculum.
 
