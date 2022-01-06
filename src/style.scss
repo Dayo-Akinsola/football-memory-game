@@ -7,13 +7,21 @@ body {
 .header {
   display: flex;
   flex-direction: column;
-  background-color: #3f1052;
+  background-color: #616671;
   padding: 2em 0;
   color: white;
 
   .header__heading {
     margin: auto;
     text-align: center;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+
+  .header__instructions {
+    text-align: center;
+    margin-top: 1em;
+    font-weight: 600;
   }
 
   .header__modes {
@@ -65,13 +73,14 @@ body {
   text-align: center;
   margin-top: 1.5em;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: flex-end;
 }
 
 .score__current-wrapper{
   display: flex;
   flex-direction: column;
+  margin-right: 4em;
 }
 
 .score__current--text {
@@ -98,6 +107,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 3.89em;
+  margin-left: 4em;
 }
 
 .score__divider {
@@ -141,5 +151,66 @@ body {
     padding-top: 1em;
     text-align: center;
     font-size: 0.6em;
+  }
+}
+
+.gameover {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  
+  .gameover--text {
+    margin-bottom: 0.5em;
+    font-size: 1.7em;
+    letter-spacing: 5px;
+  }
+
+  .gameover--score {
+    margin-bottom: 1em;
+    font-size: 1.5em;
+  }
+
+  .gameover--play-again-btn {
+    width: 10em;
+    margin: auto;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 0.4em;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: #F3F9D2;
+  }
+
+  .gameover--play-again-btn:hover {
+    border-radius: 0px;
+    background-color: #d2d2d2;
+  }
+}
+
+@media (min-width: 600px) {
+  .cards-section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards-section {
+    grid-gap: 0em;
+    width: 60%;
+
+    .card {
+      width: 80%;
+      height: 80%;
+    }
   }
 }
