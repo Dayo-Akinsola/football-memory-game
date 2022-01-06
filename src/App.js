@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import CardsSection from './components/CardsSection';
 import Score from './components/Score';
+import GameOverView from './components/GameOverView';
 import allTeams from './getTeamsInfo';
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
       --currIndex;
       [array[currIndex], array[randomIndex]] = [array[randomIndex], array[currIndex]];
     }
+    
     return array;
   }
 
@@ -21,6 +23,7 @@ const App = () => {
   const [teams, setTeams] = useState(randomSort(allTeams).slice(0, Object.values(modes).filter(mode => mode[0])[0][1]));
   const [scores, setScores] = useState({currentScore: 0, bestScore: 0});
   const [gameOver, setGameOver] = useState(false);
+  const [gameWon, setGameWon] = useState(false);
   
   useEffect(() => {
     setTeams(randomSort(teams));
@@ -35,7 +38,7 @@ const App = () => {
     );
   }
   
-  const endGame = () => {
+  const resetGame = () => {
     const newBestScore = scores.currentScore;
     if (newBestScore > scores.bestScore) {
       setScores(
@@ -59,6 +62,8 @@ const App = () => {
       return team;
     }))
     setTeams(randomSort(allTeams).slice(0, Object.values(modes).filter(mode => mode[0])[0][1]));
+    setGameOver(false);
+    setGameWon(false);
   }
 
   const changeCardStatus = (card) => {
@@ -70,17 +75,27 @@ const App = () => {
     return true;  
   }
 
+
+  const gameWinCheck = () => {
+    const clickedTeams = teams.filter(team => team.clicked);
+    if (clickedTeams.length === teams.length) {
+      setGameWon(true);
+    }
+  }
+
+
   const clickCardHandler = (event, card) => {
+    event.preventDefault();
     if (changeCardStatus(card)) {
       incrementCurrentScore();
     } else {
-      endGame();
+      setGameOver(true);
     }
+    gameWinCheck();
   }
 
   const changeMode = (event) => {
     if (!event.target.classList.contains('active')) {
-      console.log(event.target);
       if (event.target.classList[0] === 'header__mode--easy') {
         setModes({ easy: [true, 8], medium: [false, 14], hard: [false, 20] });
       } else if (event.target.classList[0] === 'header__mode--medium') {
@@ -92,15 +107,24 @@ const App = () => {
   }
 
   useEffect(() => {
-    endGame();
+    resetGame();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [modes]);
+
+  if (!gameOver && !gameWon) {
+    return (
+      <>
+        <Header modes={modes} changeMode={changeMode} />
+        <Score currentScore={scores.currentScore} bestScore={scores.bestScore} />
+        <CardsSection teams={teams} clickCardHandler={clickCardHandler}/>
+      </>
+    )
+  }
 
   return (
     <>
       <Header modes={modes} changeMode={changeMode} />
-      <Score currentScore={scores.currentScore} bestScore={scores.bestScore} />
-      <CardsSection teams={teams} clickCardHandler={clickCardHandler}/>
+      <GameOverView score={scores.currentScore} resetGame={resetGame} gameWon={gameWon} />
     </>
   )
 }
